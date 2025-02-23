@@ -2,7 +2,8 @@ import Image from "next/image";
 import bg from "../../public/background/pixelbg.png";
 import RenderModel from "./components/RenderModel.jsx";
 import Knight from "./components/models/Knight.jsx";
-
+import Ranger from "./components/models/Ranger.jsx";
+import Wizard from "./components/models/Wizard.jsx";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-betweeen relative">
@@ -11,6 +12,7 @@ export default function Home() {
         {/* Navigation and 3D Model */}
         <RenderModel>
           <Knight />
+          <Ranger />
         </RenderModel>
       </div>
     </main>
