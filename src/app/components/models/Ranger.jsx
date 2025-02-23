@@ -21,10 +21,10 @@ export default function Ranger(props) {
         receiveShadow
         geometry={nodes.Object_2.geometry}
         material={materials['Material.001']}
-        position={[-1, -1.4, 0.8]}
+        position={[-1.5, -1.4, 1.2]}
         rotation={[-Math.PI / 2, 0, -10.7]}
         scale={1.6}
-        transparent opacity={0.6} depthWrite={false}
+
       />
     </group>
   );

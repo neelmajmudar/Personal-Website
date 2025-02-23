@@ -16,7 +16,7 @@ export default function Knight(props) {
   return (
     <group {...props} dispose={null}
     ref={modelRef}
-    position={[1.5,-1, 1]}
+    position={[1.8,-1, 0.4]}
     rotation={[-Math.PI / 2, 0, -1]}
     scale={1.5}>
     <mesh
