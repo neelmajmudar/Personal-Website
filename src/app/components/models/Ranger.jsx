@@ -24,6 +24,7 @@ export default function Ranger(props) {
         position={[-1, -1.4, 0.8]}
         rotation={[-Math.PI / 2, 0, -10.7]}
         scale={1.6}
+        transparent opacity={0.6} depthWrite={false}
       />
     </group>
   );
