@@ -1,12 +1,13 @@
 "use client"
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import React, { useRef, useState } from 'react'
+import { useGLTF, Edges} from '@react-three/drei'
+import { useFrame, useThree } from '@react-three/fiber'
 
 export default function Ranger(props) {
   const { nodes, materials } = useGLTF('/models/ranger.glb')
-
   const modelRef = useRef(); 
+  const [hovered , setHovered] = React.useState(false);
+
 
   useFrame((state, delta) => {
     if (modelRef.current) {
@@ -14,6 +15,12 @@ export default function Ranger(props) {
     }
   });
 
+  const { gl} = useThree();
+    React.useEffect(() => {
+      gl.domElement.style.cursor = hovered ? "pointer" : "auto";
+    }, [hovered, gl.domElement]);
+
+    
   return (
     <group ref={modelRef} {...props} dispose={null}>
       <mesh
