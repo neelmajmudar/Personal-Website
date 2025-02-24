@@ -2,12 +2,13 @@
 import React, { useRef } from "react";
 import { useGLTF, Edges } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Knight(props) {
   const { nodes, materials } = useGLTF("/models/knight.glb");
   const modelRef = useRef();
   const [hovered, setHovered] = React.useState(false);
+  const router = useRouter();
 
   useFrame((state, delta) => {
     console.log(state.clock);
@@ -30,6 +31,7 @@ export default function Knight(props) {
       position={[1.8, -1, 0.4]}
       rotation={[-Math.PI / 2, 0, -1]}
       scale={1.5}
+      onClick={() => router.push("/experiences")}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >

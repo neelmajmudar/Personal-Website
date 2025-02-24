@@ -2,11 +2,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useGLTF, Edges } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Npc(props) {
   const { nodes, materials } = useGLTF("/models/npc.glb");
   const modelRef = useRef();
+  const router = useRouter();
   const [hovered, setHovered] = useState(false);
 
   // Ensure the model floats slightly
@@ -30,6 +31,7 @@ export default function Npc(props) {
       position={[2.1, -1.5, 2.26]}
       rotation={[0, -1, 0]}
       scale={0.65}
+      onClick = {() => router.push("/contact")}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >

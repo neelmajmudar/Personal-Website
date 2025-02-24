@@ -15,7 +15,7 @@ export default function ResumePage() {
       />
       
       {/* Content */}
-      <div className="w-full h-screen flex flex-col items-center justify-center bg-black bg-opacity-80 p-10">
+      <div className="w-full h-screen flex flex-col items-center justify-center bg-cream bg-opacity-80 p-10">
         <h1 className="text-4xl font-bold">Resume</h1>
         <p className="text-lg">My resume will be here</p>
       </div>

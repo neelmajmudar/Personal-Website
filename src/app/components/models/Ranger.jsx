@@ -2,11 +2,12 @@
 import React, { useRef, useState } from "react";
 import { useGLTF, Edges } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Ranger(props) {
   const { nodes, materials } = useGLTF("/models/ranger.glb");
   const modelRef = useRef();
+  const router = useRouter();
   const [hovered, setHovered] = useState(false);
 
   useFrame((state) => {
@@ -25,6 +26,7 @@ export default function Ranger(props) {
       ref={modelRef}
       {...props}
       dispose={null}
+      onClick={() => router.push("/about")}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >

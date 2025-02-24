@@ -23,6 +23,8 @@ export default function Scroll(props) {
   useEffect(() => {
     gl.domElement.style.cursor = hovered ? "pointer" : "auto";
   }, [hovered, gl.domElement]);
+
+
   return (
     <group
       {...props}
