@@ -27,7 +27,7 @@ export default function ResumePage() {
 
         {/* Right Section - 2/3 width (Cream Background) */}
         <div className="w-2/3 h-full bg-[#F5F5DC] bg-opacity-90 p-10 rounded-r-xl rounded-l-xl">
-          <h1 className="text-2xl font-bold font-black">Resume</h1>
+          <h1 className="text-3xl">Resume</h1>
         </div>
       </div>
     </main>

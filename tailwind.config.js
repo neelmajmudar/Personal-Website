@@ -7,15 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        inter: ['var(--font)'],
+      fontFamily: {
+        inter: ["var(--font)"],
+        pixel: ["Pixelify Sans", "sans-serif"],
       },
-      colors:{
-        background: 'rgb(var(--background))',
-        foreground: 'rgb(var(--foreground))',
-        muted: 'rgb(var(--muted))',
-        accent: 'rgb(var(--accent))',
-      }
+      colors: {
+        background: "rgb(var(--background))",
+        foreground: "rgb(var(--foreground))",
+        muted: "rgb(var(--muted))",
+        accent: "rgb(var(--accent))",
+      },
     },
   },
   plugins: [],
