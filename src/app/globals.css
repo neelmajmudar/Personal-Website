@@ -19,9 +19,8 @@
   }
 }
 
-/* Apply Pixelify Sans font globally */
 body {
-  font-family: 'Pixelify Sans', sans-serif;
+  font-family: var(--font-pixel), sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

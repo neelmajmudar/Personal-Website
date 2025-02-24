@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["var(--font)"],
-        pixel: ["Pixelify Sans", "sans-serif"],
+        pixel: ["var(--font-pixel)", "sans-serif"],
       },
       colors: {
         background: "rgb(var(--background))",
