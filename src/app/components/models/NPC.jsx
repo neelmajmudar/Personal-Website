@@ -8,13 +8,12 @@ export default function Npc(props) {
   const { nodes, materials } = useGLTF("/models/npc.glb");
   const modelRef = useRef();
   const router = useRouter();
-  const {camera, mouse, screen} = useThree();
   const [hovered, setHovered] = useState(false);
 
   // Ensure the model floats slightly
   useFrame((state) => {
     if (modelRef.current) {
-      modelRef.current.position.y = Math.sin(state.clock.getElapsedTime()) * 0.01 - 1.5;
+      modelRef.current.position.y = Math.cos(state.clock.getElapsedTime()) * 0.01 - 1.5;
     }
   });
 

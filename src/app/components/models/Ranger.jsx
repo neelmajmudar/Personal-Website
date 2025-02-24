@@ -12,7 +12,7 @@ export default function Ranger(props) {
 
   useFrame((state) => {
     if (modelRef.current) {
-      modelRef.current.position.y = Math.sin(state.clock.getElapsedTime()) * 0.02 - 0.1;
+      modelRef.current.position.y = Math.cos(state.clock.getElapsedTime()) * 0.02 - 0.1;
     }
   });
 
