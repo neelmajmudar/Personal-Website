@@ -2,7 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useGLTF, Edges } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Scroll(props) {
   const { nodes, materials } = useGLTF("/models/scroll.glb");
@@ -28,7 +28,7 @@ export default function Scroll(props) {
       {...props}
       dispose={null}
       ref={modelRef}
-      onclick={() => router.push("")}
+      onClick={() => router.push("/resume")}
       scale={[0.6, 0.6, 1]}
       position={[0.252, 0, 1]}
       rotation={[Math.PI / 14, Math.PI / 8, Math.PI / 8]}
