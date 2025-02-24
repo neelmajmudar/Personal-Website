@@ -1,40 +1,47 @@
-"use client"
-import React, { useRef, useState } from 'react'
-import { useGLTF, Edges} from '@react-three/drei'
-import { useFrame, useThree } from '@react-three/fiber'
+"use client";
+import React, { useRef, useState } from "react";
+import { useGLTF, Edges } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useRouter } from "next/router";
 
 export default function Ranger(props) {
-  const { nodes, materials } = useGLTF('/models/ranger.glb')
-  const modelRef = useRef(); 
-  const [hovered , setHovered] = React.useState(false);
+  const { nodes, materials } = useGLTF("/models/ranger.glb");
+  const modelRef = useRef();
+  const [hovered, setHovered] = useState(false);
 
-
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (modelRef.current) {
-      modelRef.current.position.y = Math.sin(state.clock.getElapsedTime()) * 0.02 -0.1;
+      modelRef.current.position.y = Math.sin(state.clock.getElapsedTime()) * 0.02 - 0.1;
     }
   });
 
-  const { gl} = useThree();
-    React.useEffect(() => {
-      gl.domElement.style.cursor = hovered ? "pointer" : "auto";
-    }, [hovered, gl.domElement]);
+  const { gl } = useThree();
+  React.useEffect(() => {
+    gl.domElement.style.cursor = hovered ? "pointer" : "auto";
+  }, [hovered, gl.domElement]);
 
-    
   return (
-    <group ref={modelRef} {...props} dispose={null}>
+    <group
+      ref={modelRef}
+      {...props}
+      dispose={null}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+    >
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Object_2.geometry}
-        material={materials['Material.001']}
+        material={materials["Material.001"]}
         position={[-1.5, -1.4, 1.2]}
         rotation={[-Math.PI / 2, 0, -10.7]}
         scale={1.6}
-
-      />
+      >
+        {/* Show white edges when hovered */}
+        {hovered && <Edges color="#ffffff" threshold={1} />}
+      </mesh>
     </group>
   );
 }
 
-useGLTF.preload('/models/ranger.glb');
+useGLTF.preload("/models/ranger.glb");
