@@ -30,7 +30,7 @@ export default function Scroll(props) {
       {...props}
       dispose={null}
       ref={modelRef}
-      onClick={() => router.push("/resume")}
+      onClick={() => router.push("/Resume")}
       scale={[0.6, 0.6, 1]}
       position={[0.252, 0, 1]}
       rotation={[Math.PI / 14, Math.PI / 8, Math.PI / 8]}
